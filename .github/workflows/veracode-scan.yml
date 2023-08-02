@@ -16,7 +16,7 @@ jobs:
         run: |
           export VERACODE_API_KEY_ID=${{ secrets.VERACODE_API_ID }}
           export VERACODE_API_KEY_SECRET=${{ secrets.VERACODE_API_KEY }}
-          guid=$(http --auth-type veracode_hmac GET "https://api.veracode.com/appsec/v1/applications?name=verademo-java-maven" | jq -r '._embedded.applications[] | select(.profile.name == "${{ github.event.client_payload.profile_name }}") | .guid')
+          guid=$(http --auth-type veracode_hmac GET "https://api.veracode.com/appsec/v1/applications?name=verademo-java-maven" | jq -r '._embedded.applications[] | select(.profile.name == "verademo-java-maven") | .guid')
           echo GUID: ${guid}
           http --auth-type=veracode_hmac DELETE "https://api.veracode.com/appsec/v1/applications/${guid}"
 
