@@ -57,7 +57,7 @@ jobs:
         with:
           appname: 'verademo-java-maven'
           createprofile: true
-          policy: 'Verademo Policy'
+          policy: VeraDemo Policy
           version: '${{ github.run_id }}'
           filepath: 'verademo.war'
           vid: '${{ secrets.VERACODE_API_ID }}'
