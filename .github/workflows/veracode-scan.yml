@@ -52,12 +52,16 @@ jobs:
           name: verademo.war
           path: .
       - name: Veracoe Upload and Scan Action Step
-        uses: veracode/veracode-uploadandscan-action@master
+        uses: veracode/uploadandscan-action@main
         id: upload_and_scan
         with:
           appname: 'verademo-java-maven'
           createprofile: true
+          policy: 'Verademo Policy'
           version: '${{ github.run_id }}'
           filepath: 'verademo.war'
           vid: '${{ secrets.VERACODE_API_ID }}'
           vkey: '${{ secrets.VERACODE_API_KEY }}'
+          #scanpollinginterval: 30
+          scantimeout: 15
+          failbuild: true
