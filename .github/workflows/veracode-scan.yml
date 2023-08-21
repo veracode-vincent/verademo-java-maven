@@ -52,7 +52,7 @@ jobs:
           name: verademo.war
           path: .
       - name: Veracoe Upload and Scan Action Step
-        uses: veracode/uploadandscan-action@main
+        uses: veracode/uploadandscan-action@vincent-test
         id: upload_and_scan
         with:
           appname: 'verademo-java-maven'
