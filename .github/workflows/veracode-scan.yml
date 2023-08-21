@@ -62,6 +62,4 @@ jobs:
           filepath: 'verademo.war'
           vid: '${{ secrets.VERACODE_API_ID }}'
           vkey: '${{ secrets.VERACODE_API_KEY }}'
-          #scanpollinginterval: 30
-          scantimeout: 15
           failbuild: true
